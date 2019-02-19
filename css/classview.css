@@ -1,0 +1,30 @@
+
+
+
+/* 
+   the classview styles
+*/
+
+h1 {
+    color: green;
+}
+
+/* 
+   these are the little
+   class icons (one for each
+   class the student is in)
+
+   maybe we should change the name? 
+   class is confusing...
+
+   there will be alot of 
+   styling for this i think
+*/
+
+.class {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    margin: 1em;
+    outline: 3px solid green;
+}

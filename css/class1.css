@@ -1,0 +1,17 @@
+
+/*
+  This is the styles for class1
+  the dummy class page
+*/
+
+h1 {
+    color: green;
+}
+table {
+    width: 50%;
+}
+table, th, td {
+  border: 1px solid black;
+}
+
+
