@@ -7,5 +7,5 @@
   * [ ] ...
  - [ ] *make-new-class* functionality
 
-# project5
+# project6
 Basic instructions go here.
