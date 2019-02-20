@@ -12,19 +12,20 @@
     </head>
 <body>
 
-    <form id="login-form">
-	First Name:<br>
-	<input type="text" name="firstname"><br>
-	Last Name:<br>
-	<input type="text" name="lastname">
-	<!-- we can probably leave out some 
-	     of the fields for now -->
-	
-    </form>
+    <div id="login-form-wrapper">
+	<div id="login-form">
+	<form>
+	    Username:<br>
+	    <input type="text" id="username-field" name="firstname"><br>
+	    <!-- we can probably leave out some 
+		 of the fields for now -->
+	</form>
+	<button type="button" id="sign-in-button">
+	    sign in
+	</button>
+	</div>
+    </div>
 
-    <button type="button" id="sign-in-button">
-	sign in
-    </button>
 
     <script src="js/main.js"></script>
 </body>
