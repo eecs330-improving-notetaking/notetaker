@@ -9,7 +9,6 @@
   to the 'user' global var
 */
 
-
   
 function newClass()
 {
@@ -20,5 +19,22 @@ function newClass()
     // have it link to class1.html page!
 }
 
-document.getElementById('new-class-button').onclick =
-    newClass;
+
+
+function openClassPage() {
+    location.href = "class1.html";
+}
+
+classes = document.getElementsByClassName("class");
+
+for(i = 0; i < classes.length; ++i) {
+    console.log(i);
+    if (classes[i].id == "new-class")
+    {
+	classes[i].onclick = newClass;
+    }
+    else
+    {
+	classes[i].onclick = openClassPage;
+    }
+}

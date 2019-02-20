@@ -4,12 +4,23 @@
 color scheme here:
 https://color.adobe.com/cloud/aHR0cHM6Ly9jYy1hcGktYXNzZXRzLmFkb2JlLmlv/library/9a7523b8-61fd-4acd-806c-cb1ad0cf5e6e/theme/bf51844c-affd-4960-b65b-243095aff967/
 */
-body {
+
+/*
+  "global" "vars" Color Scheme
+  TODO:
+    use @import and have a global root.css file 
+*/
+:root { 
+
     --color1: #868C2C;
     --color2: #BABF75;
     --color3: #F2E5AD;
     --color4: #759CBF;
     --color5: #7194F4; 
+}
+body {
+    background-color: var(--color3);
+
 }
 
 #login-form-wrapper {
@@ -23,7 +34,7 @@ body {
     text-align: left;
     
     padding: 20px;
-    background-color: green;
+    background-color: var(--color1);
     border-radius: 6px;;
     color: white;
 }
@@ -32,5 +43,5 @@ body {
     margin: 5px;
 }
 #sign-in-button {
-    color: green;
+    color: var(--color1);
 }

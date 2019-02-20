@@ -11,6 +11,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/classview.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
 
@@ -23,8 +24,16 @@
 	    <div class="class-number">
 		EECS 330 
 	    </div>
+	    <hr>
 	    <div class="class-info">
-		This class rocks.
+		How to build intuitive and effective UIs for the web and
+		beyond.
+	    </div>
+	    <div class="class-time">
+	    <hr>
+		Mon: 1-2 pm <br>
+		Wed: 1-2 pm <br>
+		Fri: 11-12pm <br>
 	    </div>
 	</div>
 
@@ -36,12 +45,16 @@
 	    <div class="class-number">
 		PHIL 269
 	    </div>
+	    <hr>
 	    <div class="class-info">
 		This class is boring af
 	    </div>
-	    <a href="class1.html">
-		this is a link to class1
-	    </a>
+	    <div class="class-time">
+	    <hr>
+		Mon: 1-2 pm <br>
+		Wed: 1-2 pm <br>
+		Fri: 11-12pm <br>
+	    </div>
 	</div>
 
 
@@ -49,9 +62,11 @@
 	    <div class="class-title">
 		New Class
 	    </div>
-	    <button id="new-class-button">
 		Click to make new class
-	    </button>
+	    <hr>
+	    <div id="new-class-icon-wrapper">
+	    <i id="new-class-icon" class="fa fa-plus-circle" aria-hidden="true"></i>
+	    </div>
 	</div>
 	<script src="js/classview.js"></script>
     </body>
