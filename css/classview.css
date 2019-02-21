@@ -1,0 +1,91 @@
+
+
+
+/* 
+   the classview styles
+*/
+
+:root { 
+
+    --color1: #868C2C;
+    --color2: #BABF75;
+    --color3: #F2E5AD;
+    --color4: #759CBF;
+    --color5: #7194F4; 
+    --color6: #F2EBCC;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+    width: 100%;
+}
+body {
+    background-color: var(--color2);
+
+}
+
+h1 {
+    color: var(--color1);
+}
+
+/* 
+   these are the little
+   class icons (one for each
+   class the student is in)
+
+   maybe we should change the name? 
+   class is confusing...
+
+   there will be alot of 
+   styling for this i think
+*/
+
+.class {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 30px;
+    background-color: var(--color6);
+    padding: 10px;
+    border-radius: 6px;
+
+    color: var(--color4);
+    box-shadow: 10px 10px;
+}
+.class-title {
+    font-size: 20px ;
+
+    font-weight: 800;
+}
+.class-number {
+
+}
+.class-info {
+    margin-top: 10px;
+
+}
+
+.class:hover {
+    background-color: var(--color5) ;
+    color: var(--color6);
+}
+
+.class-time {
+
+}
+
+#new-class-icon-wrapper {
+    display: inline-block;
+    font-size: 100px;
+    margin-left: 45px;
+    margin-top: 15px;
+}
+
+
+h1 {
+    margin-left: 30px;
+}
+
+
