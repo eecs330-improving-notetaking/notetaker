@@ -25,14 +25,30 @@ h1 {
 
 table {
     width: 50%;
+    
+    
 }
 
 
 th, td {
-  border: 1px solid black;
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid black;
+  text-align: left;
+}
+table th:first-child {
+    border-top-left-radius: 10px;
+}
+
+table th:last-child {
+    border-top-right-radius: 10px;
+}
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
 }
 
 td {
