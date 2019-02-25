@@ -1,0 +1,36 @@
+/*
+:root { 
+
+    --color1: #868C2C;
+    --color2: #BABF75;
+    --color3: #F2E5AD;
+    --color4: #759CBF;
+    --color5: #7194F4; 
+}
+*/
+
+:root {
+    --color1: #868C2C;
+    --color2: #BABF75;
+    --color3: #F2E5AD;
+    --color4: #759CBF;
+    --color5: #7194F4; 
+    --color6: #F2EBCC;
+}
+
+/*
+:root {
+    --color1: #FF6138; 
+    --color2: #999999; 
+    --color3: #F2EBCC; 
+    --color4: #759CBF; 
+    --color5: #759CBF; 
+    --color6: #F2EBCC; 
+}
+*/
+ /* 1: heading / accent color */
+ /* 2: background color */
+ /* 3: background 2 */
+ /* 4: link color */
+ /* 5: presently unused? */
+ /* 6: background 3 ? */

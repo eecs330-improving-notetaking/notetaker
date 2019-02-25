@@ -12,9 +12,7 @@ var user = {
 function logIn()
 {
     console.log("logged in user:", user);
-
     userField = document.getElementById("username-field").value;
-    console.log("userField is", userField)
     // then redirect:
     if(userField != "")
     {
@@ -27,4 +25,13 @@ function logIn()
     }
 }
 document.getElementById('sign-in-button').onclick = logIn;
+
+userNameInput = document.getElementById("username-field")
+userNameInput.addEventListener("keyup", function(e){
+    e.preventDefault();
+    if(e.keyCode === 13){
+	logIn();
+	document.getElementById("sign-in-button").click();
+    }
+});
 

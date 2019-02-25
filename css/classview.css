@@ -5,15 +5,7 @@
    the classview styles
 */
 
-:root { 
-
-    --color1: #868C2C;
-    --color2: #BABF75;
-    --color3: #F2E5AD;
-    --color4: #759CBF;
-    --color5: #7194F4; 
-    --color6: #F2EBCC;
-}
+@import url("root.css");
 
 [class^="icon-"], [class*=" icon-"] {
     display: inline-block;
@@ -68,7 +60,7 @@ h1 {
 }
 
 .class:hover {
-    background-color: var(--color5) ;
+    background-color: var(--color4) ;
     color: var(--color6);
 }
 

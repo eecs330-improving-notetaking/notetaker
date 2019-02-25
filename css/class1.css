@@ -3,18 +3,20 @@
   the dummy class page
 */
 
+@import url("root.css");
+
 body {
-    background: #BABF75;
+    background: var(--color2);
 }
 
 h1 {
-    color: green;
+    color: var(--color1);
     display: inline-block;
     margin-left: 10px;
 }
 
 .back-button {
-    background-color: green;
+    background-color: var(--color1);
     border-radius: 50%;
     color: white;
     text-align: center;
@@ -38,13 +40,13 @@ td {
 }
 
 tr {
-  background-color: #F2E5AD;
+    background-color: var(--color3);
 }
 
 tr:first-child {
-  background-color: #F2EBCC;
+    background-color: var(--color6);
 }
 
 tr:hover {
-  background-color: #F2EBCC;
+    background-color: var(--color6);
 }

@@ -10,14 +10,13 @@ https://color.adobe.com/cloud/aHR0cHM6Ly9jYy1hcGktYXNzZXRzLmFkb2JlLmlv/library/9
   TODO:
     use @import and have a global root.css file 
 */
-:root { 
+@import url("root.css");
+/* this imports our color theme!
+   sets custon faces:
+   --color1
+   --color2... 5
+*/
 
-    --color1: #868C2C;
-    --color2: #BABF75;
-    --color3: #F2E5AD;
-    --color4: #759CBF;
-    --color5: #7194F4; 
-}
 body {
     background-color: var(--color3);
 
