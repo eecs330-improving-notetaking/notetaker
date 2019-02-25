@@ -1,17 +1,50 @@
-
 /*
   This is the styles for class1
   the dummy class page
 */
 
+body {
+    background: #BABF75;
+}
+
 h1 {
     color: green;
+    display: inline-block;
+    margin-left: 10px;
 }
+
+.back-button {
+    background-color: green;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    display: inline-block;
+}
+
 table {
     width: 50%;
 }
-table, th, td {
+
+
+th, td {
   border: 1px solid black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
 }
 
+td {
+  padding-left: 10px;
+}
 
+tr {
+  background-color: #F2E5AD;
+}
+
+tr:first-child {
+  background-color: #F2EBCC;
+}
+
+tr:hover {
+  background-color: #F2EBCC;
+}
