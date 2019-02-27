@@ -25,17 +25,18 @@ h1 {
 
 table {
     width: 50%;
-    
-    
 }
 
-
+th {
+    background-color: var(--color6);
+}
 th, td {
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid black;
   text-align: left;
 }
+
 table th:first-child {
     border-top-left-radius: 10px;
 }
@@ -43,6 +44,7 @@ table th:first-child {
 table th:last-child {
     border-top-right-radius: 10px;
 }
+/*
 table tr:last-child td:first-child {
     border-bottom-left-radius: 10px;
 }
@@ -50,7 +52,7 @@ table tr:last-child td:first-child {
 table tr:last-child td:last-child {
     border-bottom-right-radius: 10px;
 }
-
+*/
 td {
   padding-left: 10px;
 }
@@ -59,10 +61,24 @@ tr {
     background-color: var(--color3);
 }
 
-tr:first-child {
-    background-color: var(--color6);
-}
 
 tr:hover {
     background-color: var(--color6);
+}
+.auto-gen-note:hover {
+    background-color: var(--color6);
+}
+
+.auto-gen-note-last:hover {
+    background-color: var(--color6);
+}
+.auto-gen-note td {
+    
+}
+
+.auto-gen-note-last td:first-child {
+    border-bottom-left-radius: 10px;
+}
+.auto-gen-note-last td:last-child {
+    border-bottom-right-radius: 10px;
 }

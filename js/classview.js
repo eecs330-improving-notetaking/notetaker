@@ -21,7 +21,10 @@ class schoolClass //instead of this, just require main on each page! or somethin
 }
 
 //get the info about our user from before / login page
-var user = JSON.parse(JSON.parse(localStorage.getItem("user")));
+var user = localStorage.getItem("user");
+while(typeof(user) == "string"){
+    user = JSON.parse(user)
+}
 
 console.log(user);
 console.log(typeof(user));
@@ -38,8 +41,37 @@ function newClass()
 
 
 
-function openClassPage() {
-    location.href = "class1.html";
+function openClassPage(e) {
+    e = e || window.event; //SO https://stackoverflow.com/questions/9012537/how-to-get-the-element-clicked-for-the-whole-document
+    var target = e.target || e.srcElement;
+    let targetIndex = -1;
+    while(target.className != "class"){
+	if(target.className == "class-title"){
+	    break;
+	}
+	else{
+	    target = target.parentElement
+	}
+	    
+    }
+    target = target.children[0];
+    var text = target.textContent || target.innerText;
+    console.log(target);
+    console.log(text);
+    text = text.replace(/\s/g, '');
+    for(let i = 0; i < user.classes.length; ++i)
+    {
+	if (text == user.classes[i].name.replace(/\s/g, '')){
+	    targetIndex = i;
+	    break;
+	}
+    }
+    console.log(targetIndex);
+    if(targetIndex == -1){
+	alert('an error occured, conact your local Dillon')
+    }
+    user.currentClassIndex = targetIndex;
+    location.href = 'class.html'
 }
 
 classes = document.getElementsByClassName("class");
