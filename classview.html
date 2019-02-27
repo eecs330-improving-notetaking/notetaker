@@ -4,7 +4,7 @@
 <!-- 
      this is where the users
      will view their classes
--->
+  -->
 <html>
     <head>
 	<title>Note Garden - Class View</title>
@@ -17,56 +17,77 @@
 
 	<h1> Choose a Class </h1>
 
-	<div class="class">
-	    <div class="class-title">
-		Human Comp. Inter.
-	    </div>
-	    <div class="class-number">
-		EECS 330 
-	    </div>
-	    <hr>
-	    <div class="class-info">
-		How to build intuitive and effective UIs for the web and
-		beyond.
-	    </div>
-	    <div class="class-time">
-	    <hr>
-		Mon: 1-2 pm <br>
-		Wed: 1-2 pm <br>
-		Fri: 11-12pm <br>
-	    </div>
+	<div id="user-classes">
+	    
+	    <!--
+		<div class="class">
+		    <div class="class-title">
+			Human Comp. Inter.
+		    </div>
+		    <div class="class-number">
+			EECS 330 
+		    </div>
+		    <hr>
+		    <div class="class-info">
+			How to build intuitive and effective UIs for the web and
+			beyond.
+		    </div>
+		    <div class="class-time">
+			<hr>
+			Mon: 1-2 pm <br>
+			Wed: 1-2 pm <br>
+			Fri: 11-12pm <br>
+		    </div>
+		</div>
+
+
+		<div class="class">
+		    <div class="class-title">
+			Bioethics
+		    </div>
+		    <div class="class-number">
+			PHIL 269
+		    </div>
+		    <hr>
+		    <div class="class-info">
+			This class is boring af
+		    </div>
+		    <div class="class-time">
+			<hr>
+			Mon: 1-2 pm <br>
+			Wed: 1-2 pm <br>
+			Fri: 11-12pm <br>
+		    </div>
+		</div>
+		-->
+
+		<div id="new-class" class="class">
+		    <div class="class-title">
+			New Class
+		    </div>
+		    Click to make new class
+		    <hr>
+		    <div id="new-class-icon-wrapper">
+			<i id="new-class-icon" class="fa fa-plus-circle" aria-hidden="true"></i>
+		    </div>
+		</div>
+
 	</div>
 
+	<!-- the popUp NEW Class dialogue 'Modal' as W3 schools calls it-->
+	<div id="new-class-popup" class="modal">
 
-	<div class="class">
-	    <div class="class-title">
-		Bioethics
+	    <!-- Modal content -->
+	    <div class="modal-content">
+		<span id="popup-close" class="close">&times;</span>
+		<p>Some text in the Modal..</p>
+		<br>
+		Class name: <input id="new-class-name" type="text" name="fname" placeholder="Basket Weaving"><br>
+		Class Number: <input id="new-class-number" type="text" name="lname" placeholder="WATR 123"><br>
+		Class Description: <textarea id="new-class-desc" placeholder="Bring your trunks!"></textarea> <br>
+		<button id="submit-new-class-btn"> Submit </button>
 	    </div>
-	    <div class="class-number">
-		PHIL 269
-	    </div>
-	    <hr>
-	    <div class="class-info">
-		This class is boring af
-	    </div>
-	    <div class="class-time">
-	    <hr>
-		Mon: 1-2 pm <br>
-		Wed: 1-2 pm <br>
-		Fri: 11-12pm <br>
-	    </div>
-	</div>
 
-
-	<div id="new-class" class="class">
-	    <div class="class-title">
-		New Class
-	    </div>
-		Click to make new class
-	    <hr>
-	    <div id="new-class-icon-wrapper">
-	    <i id="new-class-icon" class="fa fa-plus-circle" aria-hidden="true"></i>
-	    </div>
 	</div>
 	<script src="js/classview.js"></script>
     </body>
