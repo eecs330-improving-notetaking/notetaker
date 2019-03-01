@@ -73,6 +73,7 @@ tr:hover {
 }
 .auto-gen-note:hover {
     background-color: var(--color6);
+    cursor: pointer;
 }
 
 .auto-gen-note-last:hover {
@@ -81,7 +82,9 @@ tr:hover {
 .auto-gen-note td {
     
 }
-
+.auto-gen-note-last {
+    cursor: pointer;
+}
 .auto-gen-note-last td:first-child {
     border-bottom-left-radius: 10px;
 }
