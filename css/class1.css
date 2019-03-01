@@ -1,5 +1,6 @@
 /*
-  This is the styles for class1
+  This is the styles for class.html
+  class1.html is outdated.
   the dummy class page
 */
 
@@ -12,7 +13,9 @@ body {
 h1 {
     color: var(--color1);
     display: inline-block;
-    margin-left: 10px;
+    padding: 10px;
+    margin-left: 30px;
+    font-size: 2em;
 }
 
 .back-button {
@@ -25,6 +28,9 @@ h1 {
 
 table {
     width: 50%;
+    padding: 10px;
+    margin: 30px;
+    margin-top: 10px;
 }
 
 th {
