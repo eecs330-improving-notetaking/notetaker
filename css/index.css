@@ -18,7 +18,7 @@ https://color.adobe.com/cloud/aHR0cHM6Ly9jYy1hcGktYXNzZXRzLmFkb2JlLmlv/library/9
 */
 
 body {
-    background-color: var(--color3);
+    background-color: var(--color2);
 
 }
 
@@ -33,14 +33,19 @@ body {
     text-align: left;
     
     padding: 20px;
-    background-color: var(--color1);
+    background-color: var(--color6);
     border-radius: 6px;;
-    color: white;
+    color: var(--color4);
 }
 
 #sign-in-button {
     margin: 5px;
+    color: var(--color4);
 }
-#sign-in-button {
+
+h1 {
     color: var(--color1);
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 1em;
 }

@@ -20,11 +20,11 @@ class Note
     {
 	this.date = date;
 	this.topic = topic;
-	this.content = content || ""
+	this.content = content || "";
 	this.NOfReviews = 0; //TODO maybe 1 instead?
-
+    }
 }
-console.log('loaded main.js');
+console.log('loaded mainjs');
 var user = localStorage.getItem("user")
 if(user == undefined || user == null)
 {
@@ -39,7 +39,7 @@ if(user == undefined || user == null)
 			    'PHIL 269',
 			    'This class is sooooo interesting wow')
 	],
-	currentClassIndex = -1, //current class we're viewing, 
+	currentClassIndex : -1, //current class we're viewing, 
     }
 }
 else
