@@ -26,8 +26,7 @@ while(typeof(user) == "string"){
     user = JSON.parse(user)
 }
 
-console.log(user);
-console.log(typeof(user));
+console.log("logged in", user);
 addClassesToPage(user);
 
 function newClass()
@@ -148,6 +147,7 @@ window.onclick = function(event) {
 }
 
 document.getElementById("submit-new-class-btn").onclick = function(){
+    console.log("pressed new calss btn");
     className = document.getElementById("new-class-name").value;
     classNumber =  document.getElementById("new-class-number").value;
     classDesc = document.getElementById("new-class-desc").value;
@@ -155,12 +155,36 @@ document.getElementById("submit-new-class-btn").onclick = function(){
     if(className == "" || classNumber == "" || classDesc == "") {
 	alert("please fill in all the fields!");
     }
-    user.classes.push(new schoolClass(className, classNumber, classDesc))
+    user.classes.push(new schoolClass(className, classNumber, classDesc));
     //save our user first!
     //localStorage.setItem('user', JSON.stringify(user));
+    console.log("saved user supposedly");
     location.reload();
     //make a new class! refresh the page or add child?
 }
 window.onbeforeunload = function(){
+    saveCurrentUser(user);
     localStorage.setItem('user', JSON.stringify(user));
 };
+
+
+
+function saveCurrentUser(curr)
+{
+    //while(true){};
+    console.log("saving user to allusers");
+    let allUsers = localStorage.getItem("users");
+    while(typeof(allUsers) == "string"){
+	allUsers = JSON.parse(allUsers);
+    }
+    
+    if(!curr.username in allUsers)
+    {
+	alert("Data was curropted, please enable cookies");
+	console.log("something is wrong with the cookies, root.js 12");
+    }
+
+    allUsers[curr.username] = curr;
+    localStorage.setItem("users", JSON.stringify(allUsers));
+    return;
+}
