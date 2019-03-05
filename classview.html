@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<!-- 
+<!--
      this is where the users
      will view their classes
   -->
@@ -18,14 +18,14 @@
 	<h1> Choose a Class </h1>
 
 	<div id="user-classes">
-	    
+
 	    <!--
 		<div class="class">
 		    <div class="class-title">
 			Human Comp. Inter.
 		    </div>
 		    <div class="class-number">
-			EECS 330 
+			EECS 330
 		    </div>
 		    <hr>
 		    <div class="class-info">
@@ -80,15 +80,58 @@
 	    <!-- Modal content -->
 	    <div class="modal-content">
 		<span id="popup-close" class="close">&times;</span>
-		<p>Some text in the Modal..</p>
+		<p>Fill in Class Details</p>
 		<br>
-		Class name: <input id="new-class-name" type="text" name="fname" placeholder="Basket Weaving"><br>
-		Class Number: <input id="new-class-number" type="text" name="lname" placeholder="WATR 123"><br>
-		Class Description: <textarea id="new-class-desc" placeholder="Bring your trunks!"></textarea> <br>
-		<button id="submit-new-class-btn"> Submit </button>
-	    </div>
-
+    <table id="left-forms">
+    <tr>
+		    <td> Class Number:</td>
+        <td> <input id="new-class-number" type="text" name="lname" placeholder="WATR 123"> </td>
+    </tr>
+    <tr>
+      <td> Class Name:</td>
+      <td> <input id="new-class-name" type="text" name="fname" placeholder="Basket Weaving"> </td>
+    </tr>
+    <tr>
+		    <td id="new-class-desc-text">Class Description:</td>
+        <td> <textarea id="new-class-desc" placeholder="Bring your trunks!"> </textarea> </td>
+    </tr>
+    </table>
+    <table id="right-forms">
+      <tr>
+        <th> Day </th>
+        <th> Time </th>
+      <tr>
+        <td>Monday</td>
+        <td> <input id="Monday" type="text" name="lname" placeholder="start-end"> </td>
+        <td> <select><option value="am">AM</option><option value="am">PM</option></select></td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td> <input id="Tueday" type="text" name="lname" placeholder="start-end"> </td>
+        <td> <select><option value="am">AM</option><option value="am">PM</option></select></td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td> <input id="Wednesday" type="text" name="lname" placeholder="start-end"> </td>
+        <td> <select><option value="am">AM</option><option value="am">PM</option></select></td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td> <input id="Thursday" type="text" name="lname" placeholder="start-end"> </td>
+        <td> <select><option value="am">AM</option><option value="am">PM</option></select></td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td> <input id="Friday" type="text" name="lname" placeholder="start-end"> </td>
+        <td> <select><option value="am">AM</option><option value="am">PM</option></select></td>
+      </tr>
+    </table>
+    <div id="submit-button">
+    <button id="submit-new-class-btn"> Submit </button>
+  </div>
+      </div>
 	</div>
+
 	<script src="js/classview.js"></script>
     </body>
 </html>
