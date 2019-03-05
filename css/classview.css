@@ -1,4 +1,4 @@
-/* 
+/*
    the classview styles
 */
 
@@ -17,15 +17,15 @@ h1 {
     color: var(--color1);
 }
 
-/* 
+/*
    these are the little
    class icons (one for each
    class the student is in)
 
-   maybe we should change the name? 
+   maybe we should change the name?
    class is confusing...
 
-   there will be alot of 
+   there will be alot of
    styling for this i think
 */
 
@@ -94,13 +94,44 @@ h1 {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: var(--color6);
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
+  padding: 10px;
+  border-radius: 6px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
 
+#left-forms{
+  width:22%;
+  min-width: 260px;
+  display: inline-block;
+}
+
+#new-class-name{
+  float: right;
+  width: 125px;
+}
+
+#new-class-number{
+  float: right;
+  width: 125px;
+}
+
+#new-class-desc{
+  float: right;
+  width: 125px;
+  resize: none;
+  height: 100px;
+  position: 0px;
+}
+
+
+#right-forms{
+  height: 158px;
+  display: inline-block;
+}
 /* The Close Button */
 .close {
   color: #aaa;
@@ -115,5 +146,3 @@ h1 {
   text-decoration: none;
   cursor: pointer;
 }
-
-
