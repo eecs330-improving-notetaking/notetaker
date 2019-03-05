@@ -8,7 +8,7 @@ https://color.adobe.com/cloud/aHR0cHM6Ly9jYy1hcGktYXNzZXRzLmFkb2JlLmlv/library/9
 /*
   "global" "vars" Color Scheme
   TODO:
-    use @import and have a global root.css file 
+    use @import and have a global root.css file
 */
 @import url("root.css");
 /* this imports our color theme!
@@ -26,21 +26,36 @@ body {
     margin: auto;
     padding: 30px;
     width: 30%;
+    min-width: 234.5px;
     text-align: center;
 }
 #login-form {
     height: 15%;
     text-align: left;
-    
+    min-width: 265px;
     padding: 20px;
     background-color: var(--color6);
     border-radius: 6px;;
     color: var(--color4);
 }
+#login-form-content{
+  width: 180px;
+  margin-right: 0px;
+  display: inline-block;
+}
 
 #sign-in-button {
     margin: 5px;
     color: var(--color4);
+}
+#logo-wrapper{
+  text-align:center;
+  display: inline-block;
+  margin-left: 20px;
+}
+#logo{
+  max-width: 50px;
+  height: auto;
 }
 
 h1 {
