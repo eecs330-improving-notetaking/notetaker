@@ -81,4 +81,8 @@ function addAllNotes(){
 
 }
 
+document.addEventListener('click', function(e) {
+    console.log(e.target.parentNode.class);
+});
+
 addAllNotes();
