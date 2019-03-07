@@ -94,3 +94,59 @@ tr:hover {
 .auto-gen-note-last td:last-child {
     border-bottom-right-radius: 10px;
 }
+
+.note {
+    position: relative;
+    width: 100px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 30px;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 10px 10px;
+    background-color: var(--color6);
+    color: var(--color4);
+}
+
+.note-title {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.note-topic {
+}
+
+.note-date {
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: var(--color6);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+#left-forms {
+    width: 22%;
+    min-width: 260px;
+    display: inline-block;
+}
