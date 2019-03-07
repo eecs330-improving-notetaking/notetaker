@@ -138,3 +138,42 @@ function saveCurrentUser(curr)
 
 }
 
+var modal = document.getElementById('new-note-popup');
+
+document.getElementById("new-note").onclick = function () {
+    modal.style.display = "block";
+}
+
+var span = document.getElementById("popup-close");
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+document.getElementById("submit-new-note-btn").onclick = function () {
+    console.log("pressed new note btn");
+    noteTopic = document.getElementById("new-note-topic").value;
+    noteDate = document.getElementById("new-note-date").value;
+    console.log(noteTopic, noteDate);
+    if (noteTopic == "" || noteDate == "") {
+        alert("please fill in all the fields!");
+    }
+    user.classes[user.currentClassIndex].notes.push(new Note(noteDate, noteTopic, "heyo"));
+    saveCurrentUser(user);
+    //save our user first!
+    //localStorage.setItem('user', JSON.stringify(user));
+    console.log("saved user supposedly");
+    location.reload();
+    //make a new class! refresh the page or add child?
+}
+window.onbeforeunload = function () {
+    saveCurrentUser(user);
+    localStorage.setItem('user', JSON.stringify(user));
+};
+
+addAllNotes();
