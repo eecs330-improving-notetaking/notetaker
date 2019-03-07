@@ -14,16 +14,19 @@ h1 {
     color: var(--color1);
     display: inline-block;
     padding: 10px;
-    margin-left: 30px;
-    font-size: 2em;
+    margin-left: 10px;
+    font-size: 3.5em;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 .back-button {
-    background-color: var(--color1);
-    border-radius: 50%;
-    color: white;
-    text-align: center;
+    margin-left: 35px;
     display: inline-block;
+}
+
+i.fas:hover{
+    color: var(--color6);
 }
 
 table {
