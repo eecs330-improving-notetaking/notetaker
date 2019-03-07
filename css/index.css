@@ -26,12 +26,13 @@ body {
     margin: auto;
     padding: 30px;
     width: 30%;
+    min-width: 234.5px;
     text-align: center;
 }
 #login-form {
     height: 15%;
     text-align: left;
-    
+    min-width: 265px;
     padding: 20px;
     background-color: var(--color6);
     border-radius: 6px;;
@@ -41,6 +42,16 @@ body {
 #sign-in-button {
     margin: 5px;
     color: var(--color4);
+}
+
+#logo-wrapper{
+  text-align:center;
+  display: inline-block;
+  margin-left: 20px;
+}
+#logo{
+  max-width: 50px;
+  height: auto;
 }
 
 h1 {
