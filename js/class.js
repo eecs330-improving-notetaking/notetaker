@@ -1,3 +1,11 @@
+/*
+  class.js - handles all logic for the idividual 'class' page(s). 
+  Assumes that the users notes all have a different TOPIC field.
+  TODO: additional logic could be added to make sure the user does not have 
+  many notes of the same topic
+*/
+
+
 class Note //TODO remove and replace bby including anoher js file like main
 {
     constructor(date, topic, content)
@@ -33,14 +41,14 @@ console.log('loaded user:', user );
 document.getElementById('title-class-name').textContent =
     user.classes[user.currentClassIndex].name;
 
-var debug = true;
+var debug = false;
 (function(){
     if(debug)
     {
 	for(let i = 0; i < 3; ++i){
 	    user.classes[user.currentClassIndex].notes.push(
 		new Note(new Date().toJSON().slice(0,10).replace(/-/g,'/'),
-			 `Fishing ` ,
+			 `Fishing ${i}` ,
 			 `Fishing is an a ancient sport that originated ${i+1}000 years ago by a boy of only ${i+2} years. `+
 			 `\"Stop!\" His mother would tell him. She feared he would fall victim to the giant sea monsters `+
 			 `like his father and ${i+2} brothers. But he was determined to slay the beasts that took his `+
@@ -56,7 +64,7 @@ function addAllNotes(){
     {
 	alert("no notes");
     }
-    console.log( user.classes[user.currentClassIndex].notes.length);
+    //console.log( user.classes[user.currentClassIndex].notes.length);
     let table = document.getElementById('notes-table');
     for(let i = 0; i < user.classes[user.currentClassIndex].notes.length; ++i)
     {
@@ -82,7 +90,51 @@ function addAllNotes(){
 }
 
 document.addEventListener('click', function(e) {
-    console.log(e.target.parentNode.class);
+    console.log(e.target.parentNode.className);
+    var className =  e.target.parentNode.className;
+    if( className == 'auto-gen-note' || className == 'auto-gen-note-last' )
+    {
+	console.log(e.target.parentNode.children[0].textContent);
+	let topic = e.target.parentNode.children[0].textContent;
+	console.log(user.classes[user.currentClassIndex].notes);
+	for(let i = 0; i < user.classes[user.currentClassIndex].notes.length; ++i)
+	{
+	    let curr =  user.classes[user.currentClassIndex].notes[i];
+	    if(curr.topic == topic)
+	    {
+		user.currentNoteIndex = i;
+		saveCurrentUser(user);
+		console.log(curr);
+		location.href = "editor.html";
+	    }
+	}
+    }
+    else
+    {
+	console.log("clicked an example class");
+    }
 });
 
+
 addAllNotes();
+
+
+function saveCurrentUser(curr)
+{
+    let allUsers = localStorage.getItem("users");
+    while(typeof(allUsers) == "string"){
+	allUsers = JSON.parse(allUsers);
+    }
+    
+    if(!curr.username in allUsers)
+    {
+	alert("Data was curropted, please enable cookies");
+	console.log("something is wrong with the cookies, root.js 12");
+    }
+
+    allUsers[curr.username] = curr;
+    localStorage.setItem("users", JSON.stringify(allUsers));
+    localStorage.setItem("user", JSON.stringify(user));
+
+}
+

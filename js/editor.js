@@ -5,6 +5,15 @@
 */
 
 console.log('loading editor.js');
+
+
+//load user
+var user = localStorage.getItem("user");
+while( typeof(user) == "string" )
+{
+    user = JSON.parse(user);
+}
+
 function insertDot()
 {
     let dot = '\u2022 '; // emoji : '\u26AB'
@@ -31,3 +40,11 @@ function insertAtCursor(myValue) {
         myField.value += myValue;
     }
 }
+
+var currentNote = user.classes[user.currentClassIndex].notes[user.currentNoteIndex];
+textarea.textContent += user.classes[user.currentClassIndex].notes[user.currentNoteIndex].content;
+console.log("looking at note: ", user.classes[user.currentClassIndex].notes[user.currentNoteIndex], '\n',
+	    "at index ", user.currentNoteIndex);
+
+currentNote.NOfReviews += 1;
+
