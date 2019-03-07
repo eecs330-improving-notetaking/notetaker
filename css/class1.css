@@ -1,7 +1,9 @@
 /*
   This is the styles for class.html
   class1.html is outdated.
-  the dummy class page
+
+  this is the page where the user will 
+  view all the notes for a given class.
 */
 
 @import url("root.css");
@@ -97,16 +99,21 @@ tr:hover {
 
 .note {
     position: relative;
-    width: 100px;
-    height: 20px;
+    width: 10%;
+    height: 20%;
     display: inline-block;
     vertical-align: middle;
     margin: 30px;
     padding: 10px;
     border-radius: 6px;
-    box-shadow: 10px 10px;
+    box-shadow: 5px 5px;
     background-color: var(--color6);
     color: var(--color4);
+}
+.note:hover {
+    background-color: var(--color4);
+    color: var(--color6);
+    cursor: pointer;
 }
 
 .note-title {
@@ -144,9 +151,34 @@ tr:hover {
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
 }
-
+/* this is the 'fill in the x info label' */
+.modal-content p {
+    font-size: 25px;
+    font-weight: 1000;
+    color: var(--color1);
+}
 #left-forms {
     width: 22%;
     min-width: 260px;
     display: inline-block;
+}
+
+.modal table td {
+    background-color: var(--color2);
+    padding: 8px;
+}
+
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }

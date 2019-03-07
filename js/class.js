@@ -41,9 +41,9 @@ console.log('loaded user:', user );
 document.getElementById('title-class-name').textContent =
     user.classes[user.currentClassIndex].name;
 
-var debug = false;
+var debug = true;
 (function(){
-    if(debug)
+    if(debug && user.classes[user.currentClassIndex].notes.length <= 0)
     {
 	for(let i = 0; i < 3; ++i){
 	    user.classes[user.currentClassIndex].notes.push(
@@ -163,7 +163,7 @@ document.getElementById("submit-new-note-btn").onclick = function () {
     if (noteTopic == "" || noteDate == "") {
         alert("please fill in all the fields!");
     }
-    user.classes[user.currentClassIndex].notes.push(new Note(noteDate, noteTopic, "heyo"));
+    user.classes[user.currentClassIndex].notes.push(new Note(noteDate, noteTopic, ""));
     saveCurrentUser(user);
     //save our user first!
     //localStorage.setItem('user', JSON.stringify(user));
@@ -176,4 +176,4 @@ window.onbeforeunload = function () {
     localStorage.setItem('user', JSON.stringify(user));
 };
 
-addAllNotes();
+//addAllNotes();
