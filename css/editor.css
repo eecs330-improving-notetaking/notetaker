@@ -35,4 +35,20 @@ textarea {
     font-size: 20pt;
 }
 
+.back-button {
+    /*
+      This needs absolute positioning
+      In order to achive the nice scroll
+      effect and to not mess with the
+      textarea / tree canvas
+   */
+    color: var(--color7);
+    position: absolute;
+    top: 2em;
+    left: 2em;
+}
+
+.back-button:hover {
+    color: var(--color2); 
+}
 

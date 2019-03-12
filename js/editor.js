@@ -48,3 +48,31 @@ console.log("looking at note: ", user.classes[user.currentClassIndex].notes[user
 
 currentNote.NOfReviews += 1;
 
+var backBtn = document.getElementsByClassName("back-button")[0];
+
+window.onunload = function() {
+    //auto save when page is left
+}
+
+backBtn.onclick = function() {
+    //save the note,
+    //go back
+    user.classes[user.currentClassIndex].notes[user.currentNoteIndex].content =
+	textarea.value;
+    saveCurrentUser(user);
+    localStorage.setItem("user", JSON.stringify(user))
+    location.href = "class.html"
+    console.log("pressed the back button");
+}
+
+window.addEventListener("keydown", function(e){
+    if(document.activeElement !== textarea){
+	return;
+    }
+    switch(e.keyCode){
+    case 9:
+	e.preventDefault();
+	insertAtCursor('    ');
+	break;
+    }
+});

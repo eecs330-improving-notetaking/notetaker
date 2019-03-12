@@ -1,19 +1,28 @@
-<!doctype html>
-
+<!DOCTYPE html>
+<!--
+    This is the editor,
+    where the user will take 
+    their notes.
+-->
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+    <head>
+	<meta charset="utf-8">
 
-  <title>Note Garden - Editor</title>
-  <link rel="stylesheet" type="text/css" href="css/editor.css">
-</head>
+	<title>Note Garden - Editor</title>
+	<link rel="stylesheet" type="text/css" href="css/editor.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    </head>
 
-<body>
-  <canvas id="plantCanvas" height="1600" width="900"> </canvas>
+    <body>
+	<div class="back-button">
+	    <i class="fas fa-arrow-circle-left fa-3x"></i>
+	</div>
+	<canvas id="plantCanvas" height="1600" width="900"> </canvas>
 
-  <textarea id="notes-text" placeholder="your notes here"></textarea>
+	<textarea id="notes-text" placeholder="your notes here"></textarea>
 
-  <script src="js/editor.js"></script>
-  <script src="js/editorCanvas.js"></script>
-</body>
+	<script src="js/root.js"></script>
+	<script src="js/editor.js"></script>
+	<script src="js/editorCanvas.js"></script>
+    </body>
 </html>

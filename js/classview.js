@@ -29,6 +29,9 @@ while(typeof(user) == "string"){
 console.log("logged in", user);
 addClassesToPage(user);
 
+document.getElementById("title").innerHTML =
+    `Hello ${user.username}, welcome to the Note Garden!`;
+
 function newClass()
 {
     console.log('making a new class');
@@ -67,7 +70,7 @@ function openClassPage(e) {
     }
     console.log(targetIndex);
     if(targetIndex == -1){
-	alert('an error occured, conact your local Dillon')
+	alert('an error occured')
     }
     user.currentClassIndex = targetIndex;
     location.href = 'class.html'
