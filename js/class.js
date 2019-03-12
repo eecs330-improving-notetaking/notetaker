@@ -6,7 +6,7 @@
 */
 
 
-class Note //TODO remove and replace bby including anoher js file like main
+class Note //TODO remove and replace by including anoher js file like main
 {
     constructor(date, topic, content)
     {
@@ -45,18 +45,19 @@ var debug = true;
 (function(){
     if(debug && user.classes[user.currentClassIndex].notes.length <= 0)
     {
-	for(let i = 0; i < 3; ++i){
-	    user.classes[user.currentClassIndex].notes.push(
-		new Note(new Date().toJSON().slice(0,10).replace(/-/g,'/'),
-			 `Fishing ${i}` ,
-			 `Fishing is an a ancient sport that originated ${i+1}000 years ago by a boy of only ${i+2} years. `+
-			 `\"Stop!\" His mother would tell him. She feared he would fall victim to the giant sea monsters `+
-			 `like his father and ${i+2} brothers. But he was determined to slay the beasts that took his `+
-			 `dear family away from him.`))
-	}
+	user.classes[user.currentClassIndex].notes.push(
+	    new Note(new Date().toJSON().slice(0,10).replace(/-/g,'/'),
+		     'Example Note',
+		     'Here is the editor, where you will take your notes.\n \n'+
+		     'The tree in the background helps you track your progress. '+
+		     'It will grow while you are looking at the page, but if you look away '+
+		     'and get distracted it will stop!'
+		    ))
     }
 })();
  
+document.getElementById("new-note-date").value =
+    new Date().toJSON().slice(0,10).replace(/-/g,'/');
 
 
 function addAllNotes(){
@@ -171,6 +172,34 @@ document.getElementById("submit-new-note-btn").onclick = function () {
     location.reload();
     //make a new class! refresh the page or add child?
 }
+
+var deleteModal = document.getElementById('delete-class-popup');
+
+document.getElementById("delete-class").onclick = function () {
+    deleteModal.style.display = "block";
+}
+
+var deleteSpan = document.getElementById("delete-class-popup-close");
+deleteSpan.onclick = function () {
+    deleteModal.style.display = "none";
+}
+
+var noDeleteBtn = document.getElementById("no-delete");
+noDeleteBtn.onclick = function () {
+    deleteModal.style.display = "none";
+}
+var yesDeleteBtn = document.getElementById("yes-delete");
+yesDeleteBtn.onclick = function() {
+    user.classes.splice(user.currentClassIndex, 1); //remove 1 element starting from currIndex
+    user.currentClassIndex = -1;
+    saveCurrentUser(user);
+    localStorage.setItem('user', JSON.stringify(user));
+    location.href = "classview.html";
+}
+
+
+
+
 window.onbeforeunload = function () {
     saveCurrentUser(user);
     localStorage.setItem('user', JSON.stringify(user));
