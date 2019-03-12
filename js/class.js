@@ -176,4 +176,10 @@ window.onbeforeunload = function () {
     localStorage.setItem('user', JSON.stringify(user));
 };
 
-//addAllNotes();
+
+//DELETE CLASS
+
+//var delete_class_button = document.getElementById("delete-class");
+//delete_class_button.onclick = function () {
+//    user.classes[user.currentClassIndex] = null;
+//}
