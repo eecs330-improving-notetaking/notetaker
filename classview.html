@@ -100,191 +100,56 @@
     </table>
     <table id="right-forms">
       <tr>
+        <th> </th>
         <th> Day </th>
         <th> Start Time </th>
         <th> End Time </th>
       <tr>
+        <td><input type="checkbox" id="MondayCheck" value="Mon" onclick="check('0')"></td>
         <td>Monday</td>
-        <td> <select>
-            <option value="8">8:00am</option>
-            <option value="9">9:00am</option>
-            <option value="10">10:00am</option>
-            <option value="11">11:00am</option>
-            <option value="12">12:00pm</option>
-            <option value="1">1:00pm</option>
-            <option value="2">2:00pm</option>
-            <option value="3">3:00pm</option>
-            <option value="4">4:00pm</option>
-            <option value="5">5:00pm</option>
-            <option value="6">6:00pm</option>
-            <option value="7">7:00pm</option>
-            <option value="8">8:00pm</option>
-        </select> </td>
+        <td> <input type="time" id="MondayStart" min="8:00" max="20:00" disabled='disabled'> </td>
         <td>
-            <select>
-                <option value="8">8:00am</option>
-                <option value="9">9:00am</option>
-                <option value="10">10:00am</option>
-                <option value="11">11:00am</option>
-                <option value="12">12:00pm</option>
-                <option value="1">1:00pm</option>
-                <option value="2">2:00pm</option>
-                <option value="3">3:00pm</option>
-                <option value="4">4:00pm</option>
-                <option value="5">5:00pm</option>
-                <option value="6">6:00pm</option>
-                <option value="7">7:00pm</option>
-                <option value="8">8:00pm</option>
-            </select>
+            <input type="time" id="MondayEnd" min="8:00" max="20:00" disabled="disabled"> </td>
         </td>
       </tr>
       <tr>
+          <td><input type="checkbox" id="TuesdayCheck" value="Tues" onclick="check('1')"></td>
           <td>Tuesday</td>
           <td>
-              <select>
-                  <option value="8">8:00am</option>
-                  <option value="9">9:00am</option>
-                  <option value="10">10:00am</option>
-                  <option value="11">11:00am</option>
-                  <option value="12">12:00pm</option>
-                  <option value="1">1:00pm</option>
-                  <option value="2">2:00pm</option>
-                  <option value="3">3:00pm</option>
-                  <option value="4">4:00pm</option>
-                  <option value="5">5:00pm</option>
-                  <option value="6">6:00pm</option>
-                  <option value="7">7:00pm</option>
-                  <option value="8">8:00pm</option>
-              </select>
+              <input type="time" id="TuesdayStart" min="8:00" max="20:00" disabled="disabled"> </td>
           </td>
           <td>
-              <select>
-                  <option value="8">8:00am</option>
-                  <option value="9">9:00am</option>
-                  <option value="10">10:00am</option>
-                  <option value="11">11:00am</option>
-                  <option value="12">12:00pm</option>
-                  <option value="1">1:00pm</option>
-                  <option value="2">2:00pm</option>
-                  <option value="3">3:00pm</option>
-                  <option value="4">4:00pm</option>
-                  <option value="5">5:00pm</option>
-                  <option value="6">6:00pm</option>
-                  <option value="7">7:00pm</option>
-                  <option value="8">8:00pm</option>
-              </select>
+              <input type="time" id="TuesdayEnd" min="8:00" max="20:00" disabled="disabled"> </td>
           </td>
       </tr>
       <tr>
+          <td><input type="checkbox" id="WednesdayCheck" value="Wed" onclick="check('2')"></td>
           <td>Wednesday</td>
           <td>
-              <select>
-                  <option value="8">8:00am</option>
-                  <option value="9">9:00am</option>
-                  <option value="10">10:00am</option>
-                  <option value="11">11:00am</option>
-                  <option value="12">12:00pm</option>
-                  <option value="1">1:00pm</option>
-                  <option value="2">2:00pm</option>
-                  <option value="3">3:00pm</option>
-                  <option value="4">4:00pm</option>
-                  <option value="5">5:00pm</option>
-                  <option value="6">6:00pm</option>
-                  <option value="7">7:00pm</option>
-                  <option value="8">8:00pm</option>
-              </select>
+              <input type="time" id="WednesdayStart" min="8:00" max="20:00" disabled="disabled"> </td>
           </td>
           <td>
-              <select>
-                  <option value="8">8:00am</option>
-                  <option value="9">9:00am</option>
-                  <option value="10">10:00am</option>
-                  <option value="11">11:00am</option>
-                  <option value="12">12:00pm</option>
-                  <option value="1">1:00pm</option>
-                  <option value="2">2:00pm</option>
-                  <option value="3">3:00pm</option>
-                  <option value="4">4:00pm</option>
-                  <option value="5">5:00pm</option>
-                  <option value="6">6:00pm</option>
-                  <option value="7">7:00pm</option>
-                  <option value="8">8:00pm</option>
-              </select>
+              <input type="time" id="WednesdayEnd" min="8:00" max="20:00" disabled="disabled"> </td>
           </td>
       </tr>
       <tr>
+          <td><input type="checkbox" id="ThursdayCheck" value="Thurs" onclick="check('3')"></td>
           <td>Thursday</td>
           <td>
-              <select>
-                  <option value="8">8:00am</option>
-                  <option value="9">9:00am</option>
-                  <option value="10">10:00am</option>
-                  <option value="11">11:00am</option>
-                  <option value="12">12:00pm</option>
-                  <option value="1">1:00pm</option>
-                  <option value="2">2:00pm</option>
-                  <option value="3">3:00pm</option>
-                  <option value="4">4:00pm</option>
-                  <option value="5">5:00pm</option>
-                  <option value="6">6:00pm</option>
-                  <option value="7">7:00pm</option>
-                  <option value="8">8:00pm</option>
-              </select>
+              <input type="time" id="ThursdayStart" min="8:00" max="20:00" disabled="disabled"> </td>
           </td>
           <td>
-              <select>
-                  <option value="8">8:00am</option>
-                  <option value="9">9:00am</option>
-                  <option value="10">10:00am</option>
-                  <option value="11">11:00am</option>
-                  <option value="12">12:00pm</option>
-                  <option value="1">1:00pm</option>
-                  <option value="2">2:00pm</option>
-                  <option value="3">3:00pm</option>
-                  <option value="4">4:00pm</option>
-                  <option value="5">5:00pm</option>
-                  <option value="6">6:00pm</option>
-                  <option value="7">7:00pm</option>
-                  <option value="8">8:00pm</option>
-              </select>
+              <input type="time" id="ThursdayEnd" min="8:00" max="20:00" disabled="disabled"> </td>
           </td>
       </tr>
       <tr>
+          <td><input type="checkbox" id="FridayCheck" value="Fri" onclick="check('4')"></td>
           <td>Friday</td>
           <td>
-              <select>
-                  <option value="8">8:00am</option>
-                  <option value="9">9:00am</option>
-                  <option value="10">10:00am</option>
-                  <option value="11">11:00am</option>
-                  <option value="12">12:00pm</option>
-                  <option value="1">1:00pm</option>
-                  <option value="2">2:00pm</option>
-                  <option value="3">3:00pm</option>
-                  <option value="4">4:00pm</option>
-                  <option value="5">5:00pm</option>
-                  <option value="6">6:00pm</option>
-                  <option value="7">7:00pm</option>
-                  <option value="8">8:00pm</option>
-              </select>
+              <input type="time" id="FridayStart" min="8:00" max="20:00" disabled="disabled"> </td>
           </td>
           <td>
-              <select>
-                  <option value="8">8:00am</option>
-                  <option value="9">9:00am</option>
-                  <option value="10">10:00am</option>
-                  <option value="11">11:00am</option>
-                  <option value="12">12:00pm</option>
-                  <option value="1">1:00pm</option>
-                  <option value="2">2:00pm</option>
-                  <option value="3">3:00pm</option>
-                  <option value="4">4:00pm</option>
-                  <option value="5">5:00pm</option>
-                  <option value="6">6:00pm</option>
-                  <option value="7">7:00pm</option>
-                  <option value="8">8:00pm</option>
-              </select>
-          </td>
+              <input type="time" id="FridayEnd" min="8:00" max="20:00" disabled="disabled"> </td>
       </tr>
     </table>
     <div id="submit-button">

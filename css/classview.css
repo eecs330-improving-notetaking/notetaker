@@ -132,6 +132,10 @@ h1 {
   height: 158px;
   display: inline-block;
 }
+
+input:disabled{
+  background: #ccc;
+}
 /* The Close Button */
 .close {
   color: #aaa;
