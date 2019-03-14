@@ -48,11 +48,16 @@ console.log("looking at note: ", user.classes[user.currentClassIndex].notes[user
 
 currentNote.NOfReviews += 1;
 
-var backBtn = document.getElementsByClassName("back-button")[0];
-
 window.onunload = function() {
     //auto save when page is left
+    user.classes[user.currentClassIndex].notes[user.currentNoteIndex].content =
+	textarea.value;
+    saveCurrentUser(user);
+    localStorage.setItem("user", JSON.stringify(user))
+    location.href = "class.html"
 }
+
+var backBtn = document.getElementsByClassName("back-button")[0];
 
 backBtn.onclick = function() {
     //save the note,
@@ -63,6 +68,16 @@ backBtn.onclick = function() {
     localStorage.setItem("user", JSON.stringify(user))
     location.href = "class.html"
     console.log("pressed the back button");
+}
+
+var saveBtn = document.getElementsByClassName("save-button")[0];
+
+saveBtn.onclick = function() {
+    user.classes[user.currentClassIndex].notes[user.currentNoteIndex].content =
+	textarea.value;
+    saveCurrentUser(user);
+    localStorage.setItem("user", JSON.stringify(user))
+    console.log("pressed save button and saved!");
 }
 
 window.addEventListener("keydown", function(e){
@@ -76,3 +91,13 @@ window.addEventListener("keydown", function(e){
 	break;
     }
 });
+
+
+/* 
+textarea.oninput = function() {
+    console.log('inputting...');
+    var scroll_height = textarea.scrollHeight;
+    console.log('scroll height is', scroll_height + 'px;');
+    textarea.style['height'] = scroll_height + 'px;';
+} 
+*/
