@@ -76,3 +76,13 @@ window.addEventListener("keydown", function(e){
 	break;
     }
 });
+
+
+/* 
+textarea.oninput = function() {
+    console.log('inputting...');
+    var scroll_height = textarea.scrollHeight;
+    console.log('scroll height is', scroll_height + 'px;');
+    textarea.style['height'] = scroll_height + 'px;';
+} 
+*/
