@@ -51,7 +51,9 @@ body {
 #logo-wrapper{
   text-align:center;
   display: inline-block;
+  margin-top:20px;
   margin-left: 20px;
+  float: right;
 }
 #logo{
   max-width: 50px;
