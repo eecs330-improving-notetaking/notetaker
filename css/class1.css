@@ -2,7 +2,7 @@
   This is the styles for class.html
   class1.html is outdated.
 
-  this is the page where the user will 
+  this is the page where the user will
   view all the notes for a given class.
 */
 
@@ -91,7 +91,6 @@ tr {
     background-color: var(--color3);
 }
 
-
 tr:hover {
     background-color: var(--color6);
 }
@@ -104,7 +103,7 @@ tr:hover {
     background-color: var(--color6);
 }
 .auto-gen-note td {
-    
+
 }
 .auto-gen-note-last {
     cursor: pointer;
@@ -180,11 +179,21 @@ tr:hover {
     width: 22%;
     min-width: 260px;
     display: inline-block;
+    margin: 0px;
+    padding: 0px;
 }
 
 .modal table td {
-    background-color: var(--color2);
-    padding: 8px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px;
+  padding-left: 0px;
+  text-align: left;
+}
+
+.modal table tr {
+  background-color: var(--color6);
+  text-align: left;
 }
 
 

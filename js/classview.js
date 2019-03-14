@@ -1,11 +1,11 @@
 /*
   This js file handles
-  all interaction on the 
+  all interaction on the
   class view page.
- 
+
   Assumes index.html (and
-  main.js) have been loaded 
-  already. This gives us access 
+  main.js) have been loaded
+  already. This gives us access
   to the 'user' global var
 */
 class schoolClass //instead of this, just require main on each page! or something
@@ -13,7 +13,7 @@ class schoolClass //instead of this, just require main on each page! or somethin
     constructor(name, number, description, notes)
     {
 	this.name = name;
-	this.number = number; 
+	this.number = number;
 	this.description = description;
 	this.notes = notes || [] //empty list of notes
     }
@@ -54,7 +54,7 @@ function openClassPage(e) {
 	else{
 	    target = target.parentElement
 	}
-	    
+
     }
     target = target.children[0];
     var text = target.textContent || target.innerText;
@@ -92,14 +92,14 @@ if(classes != undefined){
 
 function addClassesToPage(user)
 {
-    if( user === null || user === undefined) 
+    if( user === null || user === undefined)
     {
 	alert('Please change your browser to use cookies!')
     };
     var classesElement = document.getElementById('user-classes')
     for(let i = 0; i<user.classes.length; ++i)
-    { 
-	currClass = user.classes[i]; 
+    {
+	currClass = user.classes[i];
 	template = `
     <div class="class">
 	<div class="class-title">
@@ -131,7 +131,7 @@ var modal = document.getElementById('new-class-popup');
 
 // Get the <span> element that closes the modal
 
-// When the user clicks on the button, open the modal 
+// When the user clicks on the button, open the modal
 document.getElementById("new-class").onclick = function() {
   modal.style.display = "block";
 }
@@ -148,6 +148,7 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
 
 document.getElementById("submit-new-class-btn").onclick = function(){
     console.log("pressed new calss btn");
@@ -180,7 +181,7 @@ function saveCurrentUser(curr)
     while(typeof(allUsers) == "string"){
 	allUsers = JSON.parse(allUsers);
     }
-    
+
     if(!curr.username in allUsers)
     {
 	alert("Data was curropted, please enable cookies");
@@ -190,4 +191,20 @@ function saveCurrentUser(curr)
     allUsers[curr.username] = curr;
     localStorage.setItem("users", JSON.stringify(allUsers));
     return;
+}
+
+function check(i){
+  console.log(i);
+  var checks = ["MondayCheck", "TuesdayCheck", "WednesdayCheck", "ThursdayCheck", "FridayCheck"]
+  var starts = ["MondayStart", "TuesdayStart", "WednesdayStart", "ThursdayStart", "FridayStart"]
+  var ends = ["MondayEnd", "TuesdayEnd", "WednesdayEnd", "ThursdayEnd", "FridayEnd"]
+  var checked = document.getElementById(checks[i]).checked;
+  console.log(checked);
+  if (checked){
+    document.getElementById(starts[i]).disabled = false;
+    document.getElementById(ends[i]).disabled = false;
+  } else {
+    document.getElementById(starts[i]).disabled = true;
+    document.getElementById(ends[i]).disabled = true;
+  }
 }
