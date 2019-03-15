@@ -12,12 +12,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/classview.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     </head>
     <body>
 
+        <div class="back-button">
+            <i class="fas fa-arrow-circle-left fa-3x"></i>
+        </div>
+
         <h1 id="title">
             Hello [username], welcome to the Note Garden!
-        </h1>
+	</h1>
+
 
 	<div id="user-classes">
 
@@ -107,9 +113,9 @@
       <tr>
         <td><input type="checkbox" id="MondayCheck" value="Mon" onclick="check('0')"></td>
         <td>Monday</td>
-        <td> <input type="time" id="MondayStart" min="8:00" max="20:00" disabled='disabled'> </td>
+        <td> <input type="time" name="usr_time" id="MondayStart" min="8:00" max="20:00" disabled='disabled'> </td>
         <td>
-            <input type="time" id="MondayEnd" min="8:00" max="20:00" disabled="disabled"> </td>
+            <input type="time" name="usr_time" id="MondayEnd" min="8:00" max="20:00" disabled="disabled"> </td>
         </td>
       </tr>
       <tr>

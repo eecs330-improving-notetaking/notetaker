@@ -23,6 +23,7 @@ h1 {
 }
 
 .delete-class-button {
+    cursor: pointer;
     position: relative;
     width: 10%;
     height: 20%;
@@ -34,6 +35,11 @@ h1 {
     box-shadow: 5px 5px;
     background-color: var(--color6);
     color: var(--color4);
+}
+.delete-class-button:hover {
+    
+    background-color: var(--color4);
+    color: var(--color6);
 }
 
 .delete-class-title {
@@ -209,4 +215,12 @@ tr:hover {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+#new-note-topic {
+    margin-left: 10px;
+}
+
+#new-note-date {
+    margin-left: 10px;
 }

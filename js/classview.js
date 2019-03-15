@@ -15,7 +15,8 @@ class schoolClass //instead of this, just require main on each page! or somethin
 	this.name = name;
 	this.number = number;
 	this.description = description;
-	this.notes = notes || [] //empty list of notes
+	this.notes = notes || []; //empty list of notes
+	this.dates = {}; //"Wednesday : "10 AM - 12AM"
     }
 
 }
@@ -100,6 +101,7 @@ function addClassesToPage(user)
     for(let i = 0; i<user.classes.length; ++i)
     {
 	currClass = user.classes[i];
+	console.log(currClass.dates);
 	template = `
     <div class="class">
 	<div class="class-title">
@@ -113,10 +115,8 @@ function addClassesToPage(user)
 	    ${currClass.description}
 	</div>
 	<div class="class-time">
-	<hr> <!-- TODO add currClass.meetTimes or something -->
-	    Mon: 1-2 pm <br>
-	    Wed: 1-2 pm <br>
-	    Fri: 11-12pm <br>
+	<hr> <!-- currClass.dates -->
+${makeDatesHTML(currClass.dates)}
 	</div>
     </div>
     `
@@ -158,11 +158,18 @@ document.getElementById("submit-new-class-btn").onclick = function(){
     console.log(className, classNumber, classDesc);
     if(className == "" || classNumber == "" || classDesc == "") {
 	alert("please fill in all the fields!");
+	return;
     }
-    user.classes.push(new schoolClass(className, classNumber, classDesc));
-    //save our user first!
-    //localStorage.setItem('user', JSON.stringify(user));
-    console.log("saved user supposedly");
+    let newClass = new schoolClass(className, classNumber, classDesc);
+
+    newClass.dates = getDates();
+    if( newClass.dates == false ) {
+	return;
+    }
+
+    user.classes.push(newClass);
+
+    //user is saved automatically by beforeonload event
     location.reload();
     //make a new class! refresh the page or add child?
 }
@@ -172,6 +179,56 @@ window.onbeforeunload = function(){
 };
 
 
+function getDates() {
+    var result = {};
+
+    var days = ["Mon", "Tues", "Wed", "Thurs", "Fri"];
+    var checks = ["MondayCheck", "TuesdayCheck", "WednesdayCheck", "ThursdayCheck", "FridayCheck"];
+    var starts = ["MondayStart", "TuesdayStart", "WednesdayStart", "ThursdayStart", "FridayStart"];
+    var ends = ["MondayEnd", "TuesdayEnd", "WednesdayEnd", "ThursdayEnd", "FridayEnd"];
+
+    for( let i = 0; i < checks.length; i++) {
+	if( document.getElementById(checks[i]).checked ) {
+	    var start = makeUsTime(document.getElementById(starts[i]).value);
+	    var end = makeUsTime(document.getElementById(ends[i]).value);
+	    if(start.includes("undefined") || end.includes("undefined")) {
+		alert("Please complete the times section of the form");
+		return false;
+	    }
+	    var day = days[i];
+	    result[day] = start + ' - ' + end
+	    console.log(start, end);
+	}
+    }
+    if( Object.keys(result).length == 0 ) {
+	alert("Please complete the times section of the form");
+	return false;
+    }
+
+    return result;
+}
+
+function makeUsTime(time) {
+    let hour = time.split(':')[0];
+    let min = time.split(':')[1];
+    let is_pm = false;
+    if( parseInt(hour) > 12 ){
+	is_pm = true;
+	hour = '' + (parseInt(hour) - 12);
+    }
+	
+    console.log( hour + ':' + min + ' ' + (is_pm ? 'PM' : 'AM' ) );
+    return hour + ':' + min + ' ' + (is_pm ? 'PM' : 'AM' );
+}
+
+function makeDatesHTML(dates) {
+    if(!dates) return "Monday: 1:00 pm - 3:30 pm <br>";
+    result = ""
+    Object.keys(dates).forEach(function(key) {
+	result += ` ${key}: ${dates[key]}  <br> `;
+    })
+    return result;
+}
 
 function saveCurrentUser(curr)
 {
@@ -207,4 +264,8 @@ function check(i){
     document.getElementById(starts[i]).disabled = true;
     document.getElementById(ends[i]).disabled = true;
   }
+}
+
+document.getElementsByClassName("back-button")[0].onclick = function() {
+    location.href = "index.html";
 }
